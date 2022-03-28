@@ -1,9 +1,3 @@
-// Рассмотим стандартный шаблон проекта React
-// Из примера 002 вставим код, который внутри тега <script> в файл index.js
-// при этом отменим импорт import './index.css'; и import App from './App';
-// Запустим наш код через терминал командой npm start - на экране браузера увидим результат из примера 002
-// В данном случае мы не использовали CDN а настроили предварительно окружение - установили NodeJS и 
-// создали стандартный шаблон React
 import React from 'react';
 import ReactDOM from 'react-dom';
 //import './index.css'; - не будем импортировать index.css который предоставляет шаблон проекта по умолчанию
@@ -22,6 +16,7 @@ const Book = (props) => {
       ])
     }
 // В компонент App добавлю - компонент Book столько раз сколько мне потребуется и каждый раз буду задавать новые данные
+// Вариант App который создали в примере 002
 const App = () => {
     return React.createElement("div", {}, [
         // Компонен заголовок h1
@@ -40,8 +35,12 @@ const App = () => {
 // отрисовку проводим в блоке div с id 'root'
 ReactDOM.render(React.createElement(App), document.getElementById('root'));
 
+// Вариант App который используетс в шаблоне по умолчанию
 ReactDOM.render(
-  <React.StrictMode>
+  // StrictMode - использовать строгий режим в React
+  // Вызов приложения App с помощью фигурных скобок - это уже разметка JSX
+  // В разметке JSX всегда используется закрывающий тег />
+  <React.StrictMode>    
     <App />
   </React.StrictMode>,
   document.getElementById('root')
