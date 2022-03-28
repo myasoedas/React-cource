@@ -16,26 +16,37 @@ const Book = (props) => {
       ])
     }
 // В компонент App добавлю - компонент Book столько раз сколько мне потребуется и каждый раз буду задавать новые данные
-// Вариант App который создали в примере 002
+// Заменил старый компонент новым, который сделан на JSX
 const App = () => {
-    return React.createElement("div", {}, [
-        // Компонен заголовок h1
-        React.createElement("h1", {id: 'hello', classname: 'class1'}, 'Книжный магазин'),
-        // Компонент Book с подстановкой актуальных данных
-        React.createElement(Book, {name: 'HTML5', year: 2020,  price: 450}),
-        // Компонент Book с подстановкой актуальных данных
-        React.createElement(Book, {name: 'CSS3', year: 2021,  price: 450}),
-        // Компонент Book с подстановкой актуальных данных
-        React.createElement(Book, {name: 'JS', year: 2022,  price: 450}),
-        // Компонент Book с подстановкой актуальных данных
-        React.createElement(Book, {name: 'React', year: 2022,  price: 650}),
-      ])
+    return <div>      
+      <Book name="HTML5" year="2020" price="450" />
+      <Book name="CSS3" year="2021" price="450"/>
+      <Book name="JS" year="2022" price="450" />
+      <Book name="React" year="2022" price="650" />
+    </div>
+
+  // Вариант App который создали в примере 002 на чистом React без JSX
+  // Закоментировал старый код - он больше не нужен
+  /*React.createElement("div", {}, [
+    // Компонен заголовок h1
+    React.createElement("h1", { id: 'hello', classname: 'class1' }, 'Книжный магазин'),
+    // Компонент Book с подстановкой актуальных данных
+    React.createElement(Book, { name: 'HTML5', year: 2020, price: c }),
+    // Компонент Book с подстановкой актуальных данных
+    React.createElement(Book, { name: 'CSS3', year: 2021, price: 450 }),
+    // Компонент Book с подстановкой актуальных данных
+    React.createElement(Book, { name: 'JS', year: 2022, price: 450 }),
+    // Компонент Book с подстановкой актуальных данных
+    React.createElement(Book, { name: 'React', year: 2022, price: 650 }),
+  ])
+  */
   }
+
 // Отрисовываем приложение App с компонентами React: h1, Book которые мы создали внутри него
 // отрисовку проводим в блоке div с id 'root'
 ReactDOM.render(React.createElement(App), document.getElementById('root'));
 
-// Вариант App который используетс в шаблоне по умолчанию
+// Вариант App, который используется в шаблоне по умолчанию
 ReactDOM.render(
   // StrictMode - использовать строгий режим в React
   // Вызов приложения App с помощью фигурных скобок - это уже разметка JSX
