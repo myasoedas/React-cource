@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learn React</title>
+</head>
+<body>
+    <div id="root"></div>
+    <!-- Подключаем через CDN React -->
+    <script crossorigin src="https://unpkg.com/react@17/umd/react.development.js"></script>
+    <!-- Подключаем через CDN ReactDom -->
+    <script crossorigin src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>   
+    <!-- Пишем код на React -->
+    <script>
+        <!-- Создаем компонент React -->
+        const App = () => {
+            <!-- компонент h1 с параметрами id, className и содержимым  'Hello from React'-->
+            return React.createElement("h1", {id:'hello', className:'class1'}, 'Hello from React')
+        }
+        <!-- Отрисовываем созданный компонент App в блоке div с id 'root' -->
+        ReactDOM.render(React.createElement(App), document.getElementById('root'));
+    </script>
+</body>
+</html>
